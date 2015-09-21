@@ -1,7 +1,5 @@
 /* file: gulpfile.js */
 
-
-
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
@@ -15,6 +13,9 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache');
+
+
+// Server and live reload ==========================
 
 gulp.task('express', function() {
   var express = require('express');
@@ -40,6 +41,8 @@ function notifyLiveReload(event) {
   });
 }
 
+
+// SASS and Minify ==================================
 
 var onError = function (err) {  
   gutil.beep();
@@ -77,9 +80,9 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('public/styles/'));
 });
 
-/* Javascript concat and minify */
 
 
+// Javascript concat and uglify ============================= 
 
 gulp.task('build-js', function() {
   return gulp.src('source/javascript/**/*.js')
@@ -93,7 +96,7 @@ gulp.task('build-js', function() {
     .pipe(gulp.dest('public/javascript'));
 });
 
-/* Images Taks optimization */
+//  Images Taks optimization ================================
 
 gulp.task('images', function(){
   return gulp.src('source/images/**/*.+(png|jpg|gif|svg)')
@@ -103,7 +106,8 @@ gulp.task('images', function(){
   .pipe(gulp.dest('public/images'))
 });
 
-/* Watch task */
+
+// Watch task ==================================================
 
 gulp.task('watch', function() {
   gulp.watch('source/scss/*.scss', ['styles']);
