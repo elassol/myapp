@@ -1,0 +1,24 @@
+@import 'reset';
+@import 'grid';
+@import 'typography';
+
+
+$color: white;
+
+body {
+  background-color : $color;
+}
+
+.maindiv {
+    box-sizing: border-box;
+    box-shadow: 3px 3px 4px #444;
+    background-color: red;
+    opacity: 0.9;
+}
+
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important; 
+}
