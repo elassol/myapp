@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
     sass   = require('gulp-sass'),
+    plumber = require('gulp-plumber'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
@@ -40,13 +41,19 @@ function notifyLiveReload(event) {
 }
 
 
-
+var onError = function (err) {  
+  gutil.beep();
+  console.log(err);
+};
 
  
 gulp.task('styles', function() {
   return gulp.src('source/scss/**/*.scss')
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(sourcemaps.init())  // Process the original sources
-      .pipe(sass())
+    .pipe(sass())
     .pipe(sourcemaps.write()) // Add the map to modified source.
     .pipe(autoprefixer(
         {
@@ -72,8 +79,12 @@ gulp.task('styles', function() {
 
 /* Javascript concat and minify */
 
+
+
 gulp.task('build-js', function() {
   return gulp.src('source/javascript/**/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'))
     .pipe(sourcemaps.init())
       .pipe(concat('main.js'))
       .pipe(rename({suffix: '.min'}))
