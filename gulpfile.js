@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
+    express = require('express'),
     jshint = require('gulp-jshint'),
     sass   = require('gulp-sass'),
     plumber = require('gulp-plumber'),
