@@ -1,13 +1,15 @@
 /* file: gulpfile.js */
 
+
+
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
+    jshint = require('gulp-jshint'),
     sass   = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     rename = require('gulp-rename'),
-    jshint = require('gulp-jshint'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
