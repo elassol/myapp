@@ -1,28 +1,32 @@
+doctype
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/chunkfive-fontface.css')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+    title #{title} - My Site
+
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='stylesheet', href='/styles/styles.css')
   body
-    header
-      nav
-        ul
-          li 
-            a(href="/") Home
-          li 
-            a(href="/about") About
-          li 
-            a(href="/contact") Contact
-    body
-        h1 Hello
-    footer 
-      section.css-table
-        section.four-column
-          section.cell
-            p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-          section.cell
-            p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-          section.cell
-            p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
-          section.cell
-            p Mauris porttitor <br />felis eu leo aliquet<br /> ac rutrum odio aliquet
+    .wrapper
+      header.main_header
+        .logo 
+          h1.title Lassodesigns
+          p Front end developer & coffe lover
+        include partials/nav.jade
+      
+      section.container
+        .main-content
+          h1 My Site 
+          p content area
+        .sidebar
+          p desife bar
+
+      footer.main_footer
+        p Running on node with Express, Jade and Stylus 
+    
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+    script(src='javascript/main.min.js')

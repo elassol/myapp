@@ -13,7 +13,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
-    cache = require('gulp-cache');
+    cache = require('gulp-cache'),
+    jade = require('gulp-jade');
 
 
 // Server and live reload ==========================
@@ -43,6 +44,17 @@ function notifyLiveReload(event) {
 }
 
 
+// Task templates jade =============================
+
+gulp.task('html', function() {
+    return gulp.src('views/*.jade')
+        .pipe(jade({
+             pretty: true
+        })) // pip to jade plugin
+        .pipe(gulp.dest('public/')); // tell gulp our output folder
+});
+
+
 // SASS and Minify ==================================
 
 var onError = function (err) {  
@@ -57,7 +69,7 @@ gulp.task('styles', function() {
       errorHandler: onError
     }))
     .pipe(sourcemaps.init())  // Process the original sources
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write()) // Add the map to modified source.
     .pipe(autoprefixer(
         {
@@ -112,11 +124,13 @@ gulp.task('images', function(){
 
 gulp.task('watch', function() {
   gulp.watch('source/scss/*.scss', ['styles']);
-  gulp.watch('source/javascript/**/*.js', ['jshint']);
-  gulp.watch('*.html', notifyLiveReload);
+  gulp.watch('source/javascript/**/*.js', ['build-js']);
+  gulp.watch('./views/**/*.jade', ['html']);
+  gulp.watch('./public/*.html', notifyLiveReload);
+  gulp.watch('./views/**/*.jade',  notifyLiveReload);
   gulp.watch('./public/styles/*.css', notifyLiveReload);
 });
 
-gulp.task('default', ['styles', 'express', 'livereload', 'watch'], function() {
+gulp.task('default', ['html', 'styles', 'express', 'build-js', 'livereload', 'watch'], function() {
 
 });

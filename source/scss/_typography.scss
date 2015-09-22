@@ -15,7 +15,7 @@ $base-font-family: 'Open Sans', sans-serif;
 $base-font-size: 18px;
 $base-font-weight: 400;
 
-$fixed-font-family: 'Andale Mono', AndaleMono, monospace;
+$fixed-font-family: 'Open Sans', sans-serif;
 $fixed-font-size: 15px;
 $fixed-line-height: 1.2;
 
@@ -100,34 +100,38 @@ body {
 }
 
 
-/*
- * Modifiers
- */
-
-.float-left  { float: left; margin-right: 1em; }
-.float-right { float: right; margin-left: 1em; }
-
-.text-left   { text-align: left   !important; }
-.text-center { text-align: center !important; }
-.text-right  { text-align: right  !important; }
-
-
-/*
- * Object definitions
- */
-
-.content {
-  margin: 0 auto;
-  width: 32em;
+h1.title {
+  font-size: 36px;
 }
 
-.header-block {
-  font-size: 110%;
+// /*
+//  * Modifiers
+//  */
+
+// .float-left  { float: left; margin-right: 1em; }
+// .float-right { float: right; margin-left: 1em; }
+
+// .text-left   { text-align: left   !important; }
+// .text-center { text-align: center !important; }
+// .text-right  { text-align: right  !important; }
+
+
+// /*
+//  * Object definitions
+//  */
+
+// .content {
+//   margin: 0 auto;
+//   width: 32em;
+// }
+
+// .header-block {
+//   font-size: 110%;
   
-  &.typography h1 { font-size: 450%; margin-top: 0 !important; }
-}
+//   &.typography h1 { font-size: 450%; margin-top: 0 !important; }
+// }
 
-.author-block {
-  border-top: 3px double $quiet-color;
-  margin-top: 4em;
-}
+// .author-block {
+//   border-top: 3px double $quiet-color;
+//   margin-top: 4em;
+// }

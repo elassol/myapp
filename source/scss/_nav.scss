@@ -1,0 +1,22 @@
+
+
+#menu {
+    display: block;
+    width: 100%;
+    @extend %clearfix;
+    overflow: hidden;
+}
+
+#menu ul {
+  display: block;
+  width: 100%;
+  @extend %clearfix;
+}
+
+#menu ul li {
+    float: left;
+}
+
+.active {
+    background: gray;
+}

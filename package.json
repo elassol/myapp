@@ -1,12 +1,12 @@
 {
   "name": "myapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "My microsite enviroment",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Eduardo Lasso Lajarin",
   "license": "ISC",
   "devDependencies": {
     "connect-livereload": "^0.5.3",
@@ -20,6 +20,7 @@
     "gulp-cache": "^0.3.0",
     "gulp-concat": "^2.6.0",
     "gulp-imagemin": "^2.3.0",
+    "gulp-jade": "^1.1.0",
     "gulp-jshint": "^1.11.2",
     "gulp-minify-css": "^1.2.1",
     "gulp-plumber": "^1.0.1",
