@@ -16,11 +16,16 @@ html
         .logo 
           h1.title Lassodesigns
           p Front end developer & coffe lover
-        include partials/nav.jade
+        nav#menu
+          ul.nav.navbar-nav
+            li
+              a(href='/') Home
+            li
+              a(href='/about') About
       
       section.container
         .main-content
-          h1 My Site 
+          h1 My Site  #{title}
           p content area
         .sidebar
           p desife bar

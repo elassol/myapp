@@ -1,34 +1,33 @@
-'use strict';
 
 // BASE SETUP ===============================================
 
+'use strict';
+
 var express = require('express');
+var path = require('path');
 var app = express();
-var router = express.Router();
 
+// routes register
+var routes = require('./routes/index');
+var about = require('./routes/about');
 
-app.set('views', __dirname + '/views');
+// CONFIGURATION ============================================
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(router);
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'))
 
 
+app.use('/', routes);
+app.use('/about', about);
 
-app.get('/', function(req, res) {
-    // res.sendfile('./index.html');
-    res.render('index',{ title : 'Home' })
-});
-
-app.get('/about',function(req, res) {
-    // res.sendfile('./index.html');
-    res.render('about',{ title : 'about' })
-});
 
 // CREATE SERVER ============================================
 
 app.listen(3000, function(){
-    console.log('App started');
+    console.log('App started in port 3000');
 });
 
 module.exports = app;
