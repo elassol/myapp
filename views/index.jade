@@ -1,37 +1,7 @@
-doctype
-html
-  head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+extends layout
 
-    title #{title} - My Site
+block content
+  h1= title
+  p Welcome to #{title}
 
-    meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-
-    link(rel='stylesheet', href='/styles/styles.css')
-  body
-    .wrapper
-      header.main_header
-        .logo 
-          h1.title Lassodesigns
-          p Front end developer & coffe lover
-        nav#menu
-          ul.nav.navbar-nav
-            li
-              a(href='/') Home
-            li
-              a(href='/about') About
-      
-      section.container
-        .main-content
-          h1 My Site  #{title}
-          p content area
-        .sidebar
-          p desife bar
-
-      footer.main_footer
-        p Running on node with Express, Jade and Stylus 
     
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
-    script(src='javascript/main.min.js')

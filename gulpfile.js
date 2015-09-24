@@ -131,6 +131,6 @@ gulp.task('watch', function() {
   gulp.watch('./public/styles/*.css', notifyLiveReload);
 });
 
-gulp.task('default', ['html', 'styles', 'express', 'build-js', 'livereload', 'watch'], function() {
+gulp.task('default', ['styles', 'express', 'build-js', 'livereload', 'watch'], function() {
 
 });

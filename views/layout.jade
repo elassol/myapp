@@ -1,0 +1,34 @@
+doctype
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+    title= title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='stylesheet', href='/styles/styles.css')
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+    script(src='javascript/main.min.js')
+  body
+    .wrapper
+      block header
+      
+          header.main_header
+            nav#menu
+              ul.nav.navbar-nav
+                li
+                  a(href='/') Home
+                li
+                  a(href='/about') About
+      
+        block content
+          
+        block footer
+            #footer
+              p some footer content
+            
+
+    
