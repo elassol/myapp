@@ -1,25 +1,17 @@
-doctype
-html
-  head
-    title #{title} - My Site
-    link(rel='stylesheet', href='/styles/styles.min.css')
-  body
-    header
-      nav
-        ul
-          li
-             a(href='/') Home
-          li
-            a(href='/about') About
-            
-      h1 #{title}
+extends layout
 
-    .container
-      .main-content
-        h1 About us
-        p content area
-      .sidebar
-        p desife bar dfsdf
-        
-    footer
-      p Running on node with Express, Jade and Stylus 
+block header
+    header.main_header
+            nav#menu
+              ul.nav.navbar-nav
+                li
+                  a(href='/') Home
+                li
+                  a.active(href='/about') About
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  .wrapper
+    h1 biography 

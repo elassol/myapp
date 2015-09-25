@@ -125,8 +125,9 @@ gulp.task('images', function(){
 gulp.task('watch', function() {
   gulp.watch('source/scss/*.scss', ['styles']);
   gulp.watch('source/javascript/**/*.js', ['build-js']);
-  gulp.watch('./views/**/*.jade', ['html']);
-  gulp.watch('./public/*.html', notifyLiveReload);
+  gulp.watch('./views/**/*.jade', notifyLiveReload);
+  // gulp.watch('./views/**/*.jade', ['html']);
+  // gulp.watch('./public/*.html', notifyLiveReload);
   gulp.watch('./views/**/*.jade',  notifyLiveReload);
   gulp.watch('./public/styles/*.css', notifyLiveReload);
 });

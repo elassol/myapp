@@ -1,5 +1,14 @@
 extends layout
 
+block header
+    header.main_header
+            nav#menu
+              ul.nav.navbar-nav
+                li
+                  a.active(href='/') Home
+                li
+                  a(href='/about') About
+
 block content
   h1= title
   p Welcome to #{title}
